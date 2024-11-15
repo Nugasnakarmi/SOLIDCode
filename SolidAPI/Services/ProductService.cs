@@ -16,7 +16,7 @@ public class ProductService : IProductService
         _priceCalculator = priceCalculator;
     }
 
-    public List<Product> GetProducts()
+    public List<DiscountedProduct> GetProducts()
     {
         var products = _repository.GetAllProducts();
         foreach (var product in products)

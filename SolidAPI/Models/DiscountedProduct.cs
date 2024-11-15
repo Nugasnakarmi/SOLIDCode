@@ -1,16 +1,9 @@
 //Liskov Substitution Principle
-//Base classes should be substitutable by base classes
-//Base class Product is substituted by derived class DiscountedProduct
+//Base class Product is substituted by derived class DiscountedProduct everywhere in the API
+//and it doesn't affect the correctness of the program, this maintains inheritance hierarchy correctness.
 public class DiscountedProduct : Product
 {
-    private readonly decimal _discount;
+    public decimal discount;
 
-    public DiscountedProduct(decimal discount)
-    {
-        {
-            _discount = discount;
-        }
-    }
-
-public override decimal GetPrice() => base.GetPrice() * _discount;
+public override decimal GetPrice() => base.GetPrice() * discount;
 }

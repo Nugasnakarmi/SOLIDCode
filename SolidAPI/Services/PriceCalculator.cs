@@ -4,6 +4,6 @@ namespace SolidAPI.Services
 {
     public class PriceCalculator: IPriceCalculator
     {
-        public decimal CalculatePrice(Product product) => product.Price;
+        public decimal CalculatePrice(DiscountedProduct product) => product.Price;
     }
 }

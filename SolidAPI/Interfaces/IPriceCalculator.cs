@@ -2,5 +2,5 @@
 
 public interface IPriceCalculator
 {
-    decimal CalculatePrice(Product product);
+    decimal CalculatePrice(DiscountedProduct product);
 }
