@@ -15,7 +15,6 @@ public class DiscountedPriceCalculator : IPriceCalculator
     {
         _discount = discount;
     }
-    public decimal CalculatePrice(Product product) => product.Price;
-
-    public decimal CalculateDiscountedPrice(DiscountedProduct product) => product.Price;
+  
+    public decimal CalculatePrice(Product product) => product.Price * _discount;
 }
