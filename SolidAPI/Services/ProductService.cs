@@ -10,17 +10,19 @@ public class ProductService : IProductService
 
     public ProductService(IProductRepository repository, IPriceCalculator priceCalculator)
     {
+        //We're doing IoC pattern by inverting control of repository to handler, which is the ProductService, when using Product Service
+        //it will have control over which instance of ProductRepository to use.
         _repository = repository;
         _priceCalculator = priceCalculator;
     }
 
-    public IEnumerable<Product> GetProducts()
+    public List<Product> GetProducts()
     {
         var products = _repository.GetAllProducts();
         foreach (var product in products)
         {
             product.Price = _priceCalculator.CalculatePrice(product);
         }
-        return products;
+        return products.ToList();
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace SolidAPI.Repositories;
+﻿using SolidAPI.Interfaces;
+
+namespace SolidAPI.Repositories;
 
 //Getting all products is delegated to the ProductRepository and isn't done by the Product Class.
-public class ProductRepository
+public class ProductRepository: IProductRepository
 {
     public IEnumerable<Product> GetAllProducts()
     { // Implementation to retrieve products from the database
